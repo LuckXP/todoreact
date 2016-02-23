@@ -1,0 +1,17 @@
+.greyback{
+	background-image: url("http://grantcardonetv.com/wp-content/uploads/todo_list.jpg");
+	background-size: cover;
+	background-position: center center;
+	border-radius: 15px;
+
+}	
+
+.paraborder{
+	border-width: 2px;
+	border-color: #239188;
+	border 
+}
+
+.unique-check{
+	color: red;
+}
