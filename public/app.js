@@ -1,52 +1,65 @@
-var deleteToDo = function(){
-    var id = $(event.target).closest('tr').attr('id');
-    var toDo = $(event.target).closest('tr');
-
-    $.ajax({
-        url: '/api/todos/' + id,
-        method: 'DELETE',
-    }).done(function(){
-        console.log('task has been deleted!');
-        toDo.remove();
-    });
-};
-
-$('.deleteToDo').on('click', deleteToDo);
-
-var addToDo = function(event){
-    event.preventDefault();
-    
-    var taskName = $('#taskName').val();
-    var dueDate = $('#dueDate').val();
-    var description = $('#description').val();
-    var $table = $('#toDoTable');
-
-    var toDo = {};
-    toDo.taskName = taskName;
-    toDo.id = ;
-    toDo.gender = gender;
-
-    if(name && age && gender){
-        $.ajax({
-            url: ('/api/bears'),
-            method: 'POST',
-            data: bear
-        }).done(function(data){
-            console.log('BEAR POSTED', data);
-            $table.append('<tr id="' + data._id + '">\
-                            <td>' + data.name + '</td>\
-                            <td>' + data.age + '</td>\
-                            <td>' + data.gender + '</td>\
-                            <td><button type="button" class="btn btn-warning deleteBear">Delete Bear</button></td>\
-                        </tr>'
-                         );
-            $('.deleteBear').on('click', deleteBear);
-            $('#name').val('');
-            $('#age').val('');
-            $('#gender').val('');
-
-        });
+var TodoList = React.createClass({
+    render: function() {
+        var todosList = this.props.allMyData.map(
+            function(t) {
+                return (
+                    <div className="panel panel-default pad">
+                        <div className="panel-header pad">
+                            <h3> {t.taskName} </h3>
+                        </div>
+                        <div className="panel-body">     
+                            <p> {t.due_date} </p>
+                        </div>
+                        <div className="panel-body">     
+                            <p> {t.description} </p>
+                        </div>
+                        <div className="panel-footer">
+                            <p> {t.done} </p>
+                        </div>
+                    </div>
+                    )
+            })
+                return (
+                    <div>
+                      {todosList}
+                    </div>
+            )
     }
-};
 
-$('#addBear').on('click', addBear);
+});
+
+var App = React.createClass({
+    
+    getInitialState: function () {
+        return{
+            todos: [],
+        }
+    },
+
+    loadTodosFromServer: function() {
+        $.ajax({
+            url: 'api/todos',
+            method: 'GET',
+        }).done(function(data) {
+            this.setState({
+                todos: data,
+            })
+        }.bind(this))
+    },
+    
+    componentDidMount: function() {
+        this.loadTodosFromServer();
+    },
+
+    render: function() {
+        return (
+            <div>
+                <h3> Hello World </h3>
+                <TodoList allMyData={ this.state.todos }/>
+            </div>
+            )
+    },
+
+});
+
+React.render(<App/>, document.getElementById('app'));

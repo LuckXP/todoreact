@@ -8,7 +8,7 @@ router.route('/todos')
 		var toDo = new ToDo();
 
 		toDo.taskName = req.body.taskName;
-		toDo.due_date = req.body.dueDate;
+		toDo.due_date = req.body.due_date;
 		toDo.description = req.body.description;
 		toDo.done = req.body.done;
 
@@ -46,7 +46,7 @@ router.route('/todos/:toDo_id')
 				console.log(err);
 			} else {
 				toDo.taskName = req.body.taskName ? req.body.taskName : toDo.taskName;
-				toDo.due_date = req.body.dueDate ? req.body.dueDate : toDo.due_date;
+				toDo.due_date = req.body.due_date ? req.body.due_date : toDo.due_date;
 				toDo.description = req.body.description ? req.body.description : toDo.description;
 				toDo.done = req.body.done ? req.body.done : toDo.done; 
 				

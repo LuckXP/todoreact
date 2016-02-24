@@ -10,7 +10,7 @@
 
 	</head>
 	
-	<body>
+	<body class="container">
 
 		<div class="jumbotron">
 			<div class="container greyback" align="center">
@@ -22,94 +22,22 @@
 			</div>
 		</div>
 		
-		<section>
-			<div class="container">
-				<div class="row">	
-					<div class="panel">
-						<div class="panel-header">
-						<h3>Todo
-						</h3>
-							<div class="panel-body">
-								<table class="table table-hover">
-									<thead>
-										<tr>
-											<th>Name
-											</th>
-											<th>Date
-											</th>
-											<th>Complete
-											</th>
-										</tr>	
-									</thead>
-									<tbody id="toDoTable">
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>			
-			</div>
-		</section>
-
-		<section id=2>
-			<div class="container">
-				<div class="row">	
-					<form class="form-inline">
-					  <div class="form-group">
-					    <label class="sr-only" for="exampleInputEmail3">Task Name</label>
-					    <input type="text" class="form-control" id="taskName" placeholder="Task Name">
-					  </div>
-					  <div class="form-group">
-					    <label class="sr-only" for="exampleInputPassword3">Due Date</label>
-					    <input type="date" class="form-control" id="dueDate" placeholder="Due Date">
-					  </div>
-					  <button type="submit" id="submit-button" class="btn btn-primary">Submit</button>
-					</form>
-				</div>			
-			</div>
-		</section>
 		
-		<section>
-			&nbsp;
-		</section>
-		
-		<section>
-			<div class="container">
-				<div class="row">	
-					<div class="panel">
-						<div class="panel-header">
-						<h3>Todone
-						</h3>
-							<div class="panel-body">
-								<table class="table table-striped">
-									<thead>
-										<tr>
-											<th>Name
-											</th>
-											<th>Date
-											</th>
-										</tr>	
-									</thead>
-									<tbody>
-										<tr>
-											<td>Finish Todo
-											</td>
-											<td>2/12/16
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>			
-			</div>
-		</section>
 
-		<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		<script src="app.js"></script>
-	
+
+		<div class="jumbotron">
+ 			<div class="container">
+  				 <div id="app"></div>
+ 			</div>
+		</div>
+
 	</body>
+	<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+	<script src="https://fb.me/react-0.13.3.js"></script>
+	<script src="https://fb.me/JSXTransformer-0.13.3.js"></script>
+
+	<script type="text/jsx" src="app.js"></script>
 </html>
